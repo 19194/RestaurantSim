@@ -1,11 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqw4687f0cxuf"]
+[gd_scene load_steps=3 format=3 uid="uid://cqw4687f0cxuf"]
 
 [ext_resource type="Texture2D" uid="uid://clqoa2anjhrt7" path="res://Assets/Restaurant/Wall+Floor-Sheet.png" id="1_188ai"]
+[ext_resource type="Texture2D" uid="uid://cs4eoabc8egsl" path="res://Assets/Restaurant/Kitchen-Sheet.png" id="2_mbsa8"]
 
 [node name="Restaurant" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Wall_Floor" type="Sprite2D" parent="."]
 scale = Vector2(16.875, 16.875)
 texture = ExtResource("1_188ai")
 centered = false
+vframes = 4
+
+[node name="Kitchen" type="Sprite2D" parent="."]
+scale = Vector2(16.875, 16.875)
+texture = ExtResource("2_mbsa8")
+centered = false
+offset = Vector2(200, 0)
 vframes = 4
