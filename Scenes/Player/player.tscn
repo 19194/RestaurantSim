@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bcgjsp8t5muic" path="res://Assets/Player/Character.png" id="1_et8eq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0hdi"]
-size = Vector2(6.5037, 33.8222)
+size = Vector2(7.94074, 34.963)
 
 [node name="Player" type="CharacterBody2D"]
 
@@ -15,6 +15,7 @@ hframes = 4
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(154, 293)
+visible = false
+position = Vector2(152, 295)
 scale = Vector2(16.875, 16.875)
 shape = SubResource("RectangleShape2D_e0hdi")
