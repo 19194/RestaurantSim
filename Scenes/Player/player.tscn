@@ -1,10 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://ga05v1nydao1"]
+[gd_scene load_steps=7 format=3 uid="uid://ga05v1nydao1"]
 
 [ext_resource type="Texture2D" uid="uid://bcgjsp8t5muic" path="res://Assets/Player/Character.png" id="1_et8eq"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_kxsbj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0hdi"]
 size = Vector2(7.94074, 34.963)
+
+[sub_resource type="Animation" id="Animation_i1d1t"]
+resource_name = "walk_right"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_ajg40"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qto55"]
+_data = {
+"RESET": SubResource("Animation_ajg40"),
+"walk_right": SubResource("Animation_i1d1t")
+}
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kxsbj")
@@ -15,6 +53,7 @@ texture = ExtResource("1_et8eq")
 centered = false
 hframes = 4
 vframes = 4
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -25,3 +64,6 @@ shape = SubResource("RectangleShape2D_e0hdi")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qto55")
+}
