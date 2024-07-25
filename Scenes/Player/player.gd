@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 func _physics_process(_delta):
 	# variable that stores direction of player from input
-	var input_direction = (Input.get_action_strength("right") - Input.get_action_strength("left"))
+	var input_direction = Vector2((Input.get_action_strength("right") - Input.get_action_strength("left")), 0)
 	
 	velocity = input_direction * move_speed # velocity is equal to the direction and move speed
 	
