@@ -21,3 +21,7 @@ visible = false
 position = Vector2(152, 295)
 scale = Vector2(16.875, 16.875)
 shape = SubResource("RectangleShape2D_e0hdi")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
