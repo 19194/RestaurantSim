@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ga05v1nydao1"]
+[gd_scene load_steps=16 format=3 uid="uid://ga05v1nydao1"]
 
 [ext_resource type="Texture2D" uid="uid://bcgjsp8t5muic" path="res://Assets/Player/Character.png" id="1_et8eq"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_kxsbj"]
@@ -98,6 +98,26 @@ _data = {
 "walk_right": SubResource("Animation_i1d1t")
 }
 
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_tecp5"]
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_bcorf"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8otvp"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l1mbf"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ke6s6"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_20b8s"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_tecp5")
+states/Idle/position = Vector2(369, 100)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_bcorf")
+states/Walk/position = Vector2(539, 100)
+transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_8otvp"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_l1mbf"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ke6s6")]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kxsbj")
 
@@ -116,6 +136,13 @@ scale = Vector2(16.875, 16.875)
 shape = SubResource("RectangleShape2D_e0hdi")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qto55")
+}
+tree_root = SubResource("AnimationNodeStateMachine_20b8s")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
