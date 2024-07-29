@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://csvrfe4qgv0l0"]
+[gd_scene load_steps=4 format=3 uid="uid://csvrfe4qgv0l0"]
 
 [ext_resource type="PackedScene" uid="uid://ga05v1nydao1" path="res://Scenes/Player/player.tscn" id="1_xnj7k"]
 [ext_resource type="PackedScene" uid="uid://cqw4687f0cxuf" path="res://Scenes/Restaurant/restaurant.tscn" id="2_832lw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fueti"]
+size = Vector2(85, 1079)
 
 [node name="main" type="Node2D"]
 
@@ -20,3 +23,13 @@ process_callback = 0
 limit_left = -152
 limit_right = 5248
 position_smoothing_enabled = true
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Left_wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(42.5, 539.5)
+shape = SubResource("RectangleShape2D_fueti")
+
+[node name="Right_wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(5426, 539)
+shape = SubResource("RectangleShape2D_fueti")
