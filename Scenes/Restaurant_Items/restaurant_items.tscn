@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://c68jqjw7ghfi6"]
+[gd_scene load_steps=2 format=3 uid="uid://c68jqjw7ghfi6"]
+
+[ext_resource type="Script" path="res://Scenes/Restaurant_Items/items_script.gd" id="1_ridrp"]
 
 [node name="restaurant_items" type="Node2D"]
+script = ExtResource("1_ridrp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
