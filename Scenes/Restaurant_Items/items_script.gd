@@ -2,15 +2,15 @@ extends Node2D
 
 @onready var sprite = $Sprite2D
 
-@export var state : float = 1
-@export var texture : Texture = sprite.texture
+@export var state : int = 1
+@export var my_texture : Texture
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	sprite.texture = my_texture
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	pass
+func _physics_process(_delta):
+	sprite.frame = state - 1

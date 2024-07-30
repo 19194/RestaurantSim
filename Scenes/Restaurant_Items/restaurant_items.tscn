@@ -6,3 +6,6 @@
 script = ExtResource("1_ridrp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(16.875, 16.875)
+centered = false
+vframes = 4
