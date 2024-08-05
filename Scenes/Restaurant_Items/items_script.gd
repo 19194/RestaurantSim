@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var sprite = $Sprite2D
 
-@export var state : int = 1
+@export var state : int = 0
 @export var my_texture : Texture
 
 
@@ -13,4 +13,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
-	sprite.frame = state - 1
+	sprite.frame = state
