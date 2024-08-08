@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm0gmu2mctita"]
+[gd_scene load_steps=6 format=3 uid="uid://dm0gmu2mctita"]
 
 [ext_resource type="Texture2D" uid="uid://c7rqeooavnb5n" path="res://Assets/UI/button-Sheet.png" id="1_5kb1b"]
 
@@ -40,12 +40,14 @@ _data = {
 "idle": SubResource("Animation_00plg")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5hjmq"]
+size = Vector2(1166, 660)
+
 [node name="Interactive_Button" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(16.875, 16.875)
 texture = ExtResource("1_5kb1b")
-centered = false
 vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -60,3 +62,4 @@ offset_bottom = 23.0
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_5hjmq")
