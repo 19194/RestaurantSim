@@ -1,6 +1,44 @@
-[gd_scene load_steps=2 format=3 uid="uid://dm0gmu2mctita"]
+[gd_scene load_steps=5 format=3 uid="uid://dm0gmu2mctita"]
 
 [ext_resource type="Texture2D" uid="uid://c7rqeooavnb5n" path="res://Assets/UI/button-Sheet.png" id="1_5kb1b"]
+
+[sub_resource type="Animation" id="Animation_00plg"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_n4oce"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_acia7"]
+_data = {
+"RESET": SubResource("Animation_n4oce"),
+"idle": SubResource("Animation_00plg")
+}
 
 [node name="Interactive_Button" type="Node2D"]
 
@@ -11,6 +49,9 @@ centered = false
 vframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_acia7")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
