@@ -1,6 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dm0gmu2mctita"]
+[gd_scene load_steps=7 format=3 uid="uid://dm0gmu2mctita"]
 
 [ext_resource type="Texture2D" uid="uid://c7rqeooavnb5n" path="res://Assets/UI/button-Sheet.png" id="1_5kb1b"]
+[ext_resource type="Script" path="res://Scenes/interact_button/interact_button.gd" id="1_ok4pv"]
+
+[sub_resource type="Animation" id="Animation_n4oce"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_00plg"]
 resource_name = "idle"
@@ -19,21 +35,6 @@ tracks/0/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="Animation" id="Animation_n4oce"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_acia7"]
 _data = {
 "RESET": SubResource("Animation_n4oce"),
@@ -44,6 +45,7 @@ _data = {
 size = Vector2(1166, 660)
 
 [node name="Interactive_Button" type="Node2D"]
+script = ExtResource("1_ok4pv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(16.875, 16.875)
