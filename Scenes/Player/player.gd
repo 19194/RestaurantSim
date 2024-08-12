@@ -10,7 +10,7 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# variable that stores direction of player from input
 	var input_direction = Vector2(Input.get_action_strength("right") - Input.get_action_strength("left"), 0)
 	
