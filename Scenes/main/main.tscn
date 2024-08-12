@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://csvrfe4qgv0l0"]
+[gd_scene load_steps=5 format=3 uid="uid://csvrfe4qgv0l0"]
 
 [ext_resource type="PackedScene" uid="uid://ga05v1nydao1" path="res://Scenes/Player/player.tscn" id="1_xnj7k"]
 [ext_resource type="PackedScene" uid="uid://cqw4687f0cxuf" path="res://Scenes/Restaurant/restaurant.tscn" id="2_832lw"]
+[ext_resource type="PackedScene" uid="uid://dm0gmu2mctita" path="res://Scenes/interact_button/interact_button.tscn" id="3_f4xqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fueti"]
 size = Vector2(85, 1079)
@@ -33,3 +34,6 @@ shape = SubResource("RectangleShape2D_fueti")
 [node name="Right_wall" type="CollisionShape2D" parent="Walls"]
 position = Vector2(5426, 539)
 shape = SubResource("RectangleShape2D_fueti")
+
+[node name="Interactive_Button" parent="." instance=ExtResource("3_f4xqx")]
+position = Vector2(1803, 649)
