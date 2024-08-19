@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ga05v1nydao1"]
+[gd_scene load_steps=21 format=3 uid="uid://ga05v1nydao1"]
 
 [ext_resource type="Texture2D" uid="uid://bcgjsp8t5muic" path="res://Assets/Player/Character.png" id="1_et8eq"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_kxsbj"]
@@ -138,6 +138,9 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_bcorf")
 states/Walk/position = Vector2(539, 100)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_ke6s6"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_w5gtg"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_fwjq4")]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbwof"]
+size = Vector2(126, 84)
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kxsbj")
 
@@ -167,3 +170,9 @@ parameters/Walk/blend_position = Vector2(0, 0)
 libraries = {
 "": SubResource("AnimationLibrary_qto55")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(151, 139)
+shape = SubResource("RectangleShape2D_mbwof")

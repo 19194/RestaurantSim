@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dm0gmu2mctita"]
+[gd_scene load_steps=8 format=3 uid="uid://dm0gmu2mctita"]
 
 [ext_resource type="Texture2D" uid="uid://c7rqeooavnb5n" path="res://Assets/UI/button-Sheet.png" id="1_5kb1b"]
 [ext_resource type="Script" path="res://Scenes/interact_button/interact_button.gd" id="1_ok4pv"]
+[ext_resource type="FontFile" uid="uid://dmp8m1up2ie2b" path="res://Assets/pixel_font.otf" id="3_l6k2h"]
 
 [sub_resource type="Animation" id="Animation_n4oce"]
 length = 0.001
@@ -58,12 +59,22 @@ libraries = {
 }
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 72.0
+offset_right = 96.0
+offset_bottom = 95.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_l6k2h")
+theme_override_font_sizes/font_size = 20
+text = "[SPACE] TO INTERACT"
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_5hjmq")
 
-[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
