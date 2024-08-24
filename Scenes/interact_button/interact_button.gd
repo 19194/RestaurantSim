@@ -12,7 +12,10 @@ func _ready():
   
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("Space"):  # Default is the Enter key or Spacebar
-		print("activated")
+		if button_signal == "work":
+			SignalScript.work_button.emit()
+		elif button_signal == "upgrade":
+			SignalScript.upgrade_button.emit()
 
 func _on_area_2d_area_entered(body):
 	player_in_range = true
