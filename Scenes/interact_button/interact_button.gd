@@ -18,11 +18,9 @@ func _on_area_2d_area_entered(body):
 	player_in_range = true
 	interactive_button.visible = true
 	animation_player.play("idle")
-	print("true")
 
 
 func _on_area_2d_area_exited(area):
 	player_in_range = false
 	interactive_button.visible = false
 	animation_player.stop()
-	print("flase")
