@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var upgrade_menu = $UpgradeMenu
+@onready var player = $Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,4 +18,6 @@ func work_button_pressed():
 	print("work")
 
 func upgrade_button_pressed():
-	print("upgrade")
+	var offset : float = player.position.x - 808.125
+	upgrade_menu.position.x = offset
+	upgrade_menu.visible = true
