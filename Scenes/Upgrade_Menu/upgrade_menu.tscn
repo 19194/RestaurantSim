@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://b5gqbsyhik2js"]
+[gd_scene load_steps=2 format=3 uid="uid://b5gqbsyhik2js"]
+
+[ext_resource type="Texture2D" uid="uid://co8pse04thaug" path="res://Assets/UpgradeMenu/UpgradeMenuBackground.png" id="1_6g4o4"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Backboard" type="Sprite2D" parent="."]
+scale = Vector2(16.875, 16.875)
+texture = ExtResource("1_6g4o4")
+centered = false
