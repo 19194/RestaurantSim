@@ -15,7 +15,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("Escape") and upgrade_menu.visible == true:
 		upgrade_menu.visible = false
 		player.process_mode = Node.PROCESS_MODE_INHERIT
-		interactive_button.process_mode = Node.PROCESS_MODE_DISABLED
+		interactive_button.process_mode = Node.PROCESS_MODE_INHERIT
 	
 
 func work_button_pressed():
