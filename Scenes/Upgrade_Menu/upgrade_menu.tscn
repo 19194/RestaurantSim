@@ -42,6 +42,42 @@ theme_override_fonts/font = ExtResource("3_kwyu4")
 theme_override_font_sizes/font_size = 64
 text = "Furniture"
 
+[node name="Label_Furniture_Cost" type="Label" parent="."]
+offset_left = 800.0
+offset_top = 448.0
+offset_right = 1159.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(0.929412, 0.686275, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(0.505882, 0.337255, 0.105882, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("3_kwyu4")
+theme_override_font_sizes/font_size = 64
+text = "Cost: $"
+
+[node name="Label_Walls_Cost" type="Label" parent="."]
+offset_left = 800.0
+offset_top = 633.0
+offset_right = 1159.0
+offset_bottom = 707.0
+theme_override_colors/font_color = Color(0.929412, 0.686275, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(0.505882, 0.337255, 0.105882, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("3_kwyu4")
+theme_override_font_sizes/font_size = 64
+text = "Cost: $"
+
+[node name="Label_Kitchen_Cost" type="Label" parent="."]
+offset_left = 800.0
+offset_top = 820.0
+offset_right = 1159.0
+offset_bottom = 894.0
+theme_override_colors/font_color = Color(0.929412, 0.686275, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(0.505882, 0.337255, 0.105882, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("3_kwyu4")
+theme_override_font_sizes/font_size = 64
+text = "Cost: $"
+
 [node name="Label_Kitchen" type="Label" parent="."]
 offset_left = 232.0
 offset_top = 820.0
@@ -66,26 +102,26 @@ theme_override_fonts/font = ExtResource("3_kwyu4")
 theme_override_font_sizes/font_size = 64
 text = "Walls"
 
-[node name="Button" parent="." instance=ExtResource("4_ncru2")]
+[node name="Button_Furniture" parent="." instance=ExtResource("4_ncru2")]
 offset_left = 1532.0
 offset_top = 446.0
 offset_right = 1716.0
 offset_bottom = 516.0
 theme_override_constants/outline_size = 16
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 30
 
-[node name="Button2" parent="." instance=ExtResource("4_ncru2")]
+[node name="Button_Walls" parent="." instance=ExtResource("4_ncru2")]
 offset_left = 1532.0
 offset_top = 632.0
 offset_right = 1716.0
 offset_bottom = 702.0
 theme_override_constants/outline_size = 16
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 30
 
-[node name="Button3" parent="." instance=ExtResource("4_ncru2")]
+[node name="Button_Kitchen" parent="." instance=ExtResource("4_ncru2")]
 offset_left = 1532.0
 offset_top = 818.0
 offset_right = 1716.0
 offset_bottom = 888.0
 theme_override_constants/outline_size = 16
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 30
