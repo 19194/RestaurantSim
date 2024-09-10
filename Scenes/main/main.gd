@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("Escape") and upgrade_menu.visible == true:
+	if Input.is_action_just_pressed("Space") and upgrade_menu.visible == true:
 		upgrade_menu.visible = false
 		player.process_mode = Node.PROCESS_MODE_INHERIT
 		interactive_button.process_mode = Node.PROCESS_MODE_INHERIT

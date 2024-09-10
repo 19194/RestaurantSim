@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5gqbsyhik2js"]
+[gd_scene load_steps=6 format=3 uid="uid://b5gqbsyhik2js"]
 
 [ext_resource type="Texture2D" uid="uid://co8pse04thaug" path="res://Assets/UpgradeMenu/UpgradeMenuBackground.png" id="1_6g4o4"]
+[ext_resource type="Script" path="res://Scenes/Upgrade_Menu/upgrade_menu.gd" id="1_f2din"]
 [ext_resource type="Texture2D" uid="uid://2prs3dn1yutx" path="res://Assets/UpgradeMenu/UpgradeMenuPlaque.png" id="2_fl5a6"]
 [ext_resource type="FontFile" uid="uid://dmp8m1up2ie2b" path="res://Assets/pixel_font.otf" id="3_kwyu4"]
 [ext_resource type="PackedScene" uid="uid://bjycnqfutbjaa" path="res://Scenes/Upgrade_button/UpgradeButton.tscn" id="4_ncru2"]
 
 [node name="UpgradeMenu" type="Node2D"]
+script = ExtResource("1_f2din")
 
 [node name="Backboard" type="Sprite2D" parent="."]
 scale = Vector2(16.875, 16.875)
