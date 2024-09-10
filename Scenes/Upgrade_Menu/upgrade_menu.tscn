@@ -127,3 +127,7 @@ offset_right = 1716.0
 offset_bottom = 888.0
 theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 30
+
+[connection signal="pressed" from="Button_Furniture" to="." method="_on_button_furniture_pressed"]
+[connection signal="pressed" from="Button_Walls" to="." method="_on_button_walls_pressed"]
+[connection signal="pressed" from="Button_Kitchen" to="." method="_on_button_kitchen_pressed"]
