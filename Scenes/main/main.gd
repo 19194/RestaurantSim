@@ -8,6 +8,7 @@ extends Node2D
 func _ready():
 	SignalScript.work_button.connect(work_button_pressed)
 	SignalScript.upgrade_button.connect(upgrade_button_pressed)
+	SignalScript.furniture_upgrade.connect()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

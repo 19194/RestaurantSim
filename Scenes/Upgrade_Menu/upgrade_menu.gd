@@ -29,12 +29,12 @@ func update_costs():
 
 
 func _on_button_furniture_pressed() -> void:
-	pass # Replace with function body.
+	SignalScript.furniture_upgrade.emit()
 
 
 func _on_button_walls_pressed() -> void:
-	pass # Replace with function body.
+	SignalScript.wall_upgrade.emit()
 
 
 func _on_button_kitchen_pressed() -> void:
-	pass # Replace with function body.
+	SignalScript.kitchen_upgrade.emit()

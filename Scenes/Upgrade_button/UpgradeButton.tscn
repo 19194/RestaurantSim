@@ -3,10 +3,6 @@
 [ext_resource type="FontFile" uid="uid://dmp8m1up2ie2b" path="res://Assets/pixel_font.otf" id="1_4a4om"]
 [ext_resource type="Texture2D" uid="uid://b8560hqlay07u" path="res://Assets/UpgradeMenu/uprgade_button.png" id="2_0vo4s"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8k30b"]
-texture = ExtResource("2_0vo4s")
-region_rect = Rect2(0, 0, 18, 8)
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_86xq5"]
 texture = ExtResource("2_0vo4s")
 region_rect = Rect2(0, 8, 18, 8)
@@ -15,17 +11,21 @@ region_rect = Rect2(0, 8, 18, 8)
 texture = ExtResource("2_0vo4s")
 region_rect = Rect2(0, 16, 18, 8)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8k30b"]
+texture = ExtResource("2_0vo4s")
+region_rect = Rect2(0, 0, 18, 8)
+
 [node name="Button" type="Button"]
 offset_right = 340.0
 offset_bottom = 140.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0.643137, 1, 0.615686, 1)
 theme_override_colors/font_hover_color = Color(0.662745, 1, 0.635294, 1)
+theme_override_colors/font_pressed_color = Color(0.643137, 1, 0.615686, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0.407843, 0, 1)
 theme_override_constants/outline_size = 13
 theme_override_fonts/font = ExtResource("1_4a4om")
 theme_override_font_sizes/font_size = 38
-theme_override_styles/normal = SubResource("StyleBoxTexture_8k30b")
 theme_override_styles/hover = SubResource("StyleBoxTexture_86xq5")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_u2wth")
+theme_override_styles/normal = SubResource("StyleBoxTexture_8k30b")
 text = "Upgrade"
