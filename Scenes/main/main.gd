@@ -4,15 +4,19 @@ extends Node2D
 @onready var player = $Player
 @onready var interactive_button = $Interactive_Button
 
+@onready var walls: Node2D = $Walls
+@onready var kitchen: Node2D = $Kitchen
+@onready var furniture: Node2D = $Furniture
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalScript.work_button.connect(work_button_pressed)
 	SignalScript.upgrade_button.connect(upgrade_button_pressed)
-	SignalScript.furniture_upgrade.connect()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Space") and upgrade_menu.visible == true:
 		upgrade_menu.visible = false
 		player.process_mode = Node.PROCESS_MODE_INHERIT
@@ -28,3 +32,6 @@ func upgrade_button_pressed():
 	upgrade_menu.visible = true
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	interactive_button.process_mode = Node.PROCESS_MODE_DISABLED
+	
+func upgrade_kitchen():
+	pass
