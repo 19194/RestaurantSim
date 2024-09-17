@@ -11,20 +11,28 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalScript.upgrade_button.connect(upgrade_button_pressed)
+	SignalScript.upgrade_button.connect(update_costs)
+	SignalScript.update_prices.connect(update_costs)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
-	
-func upgrade_button_pressed():
 	update_costs()
 
 func update_costs():
-	label_furniture_cost.text = "Cost: $" + str(StatsScript.furniture_cost[StatsScript.furniture_state])
-	label_walls_cost.text = "Cost: $" + str(StatsScript.wall_cost[StatsScript.wall_state])
-	label_kitchen_cost.text = "Cost: $" + str(StatsScript.kitchen_cost[StatsScript.kitchen_state])
+	var furniture_int = StatsScript.furniture_state
+	var wall_int = StatsScript.wall_state
+	var kitchen_int = StatsScript.kitchen_state
+	
+	check_costs(furniture_int, StatsScript.furniture_cost, label_furniture_cost)
+	check_costs(wall_int, StatsScript.wall_cost, label_walls_cost)
+	check_costs(kitchen_int, StatsScript.kitchen_cost, label_kitchen_cost)
+	
+func check_costs(state, costs, label):
+	if state < 3:
+		label.text = "Cost: $" + str(costs[state])
+	else:
+		label.text = "------"
 		
 
 

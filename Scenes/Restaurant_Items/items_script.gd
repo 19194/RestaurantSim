@@ -23,4 +23,4 @@ func upgrade_self():
 		if StatsScript.money >= my_costs[state]:
 			StatsScript.money -= my_costs[state]
 			state += 1
-			print(StatsScript.money)
+			

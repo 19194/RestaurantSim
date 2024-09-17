@@ -12,3 +12,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	sprite.frame = state
+	StatsScript.kitchen_state = state
+	
