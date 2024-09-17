@@ -1,14 +1,9 @@
-extends Node2D
-
-@onready var sprite = $Sprite2D
-
-@export var state : int = 0
-@export var my_texture : Texture
-@export var my_signal : Signal
+extends "res://Scenes/Restaurant_Items/items_script.gd"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	my_signal = SignalScript.wall_upgrade
 	sprite.texture = my_texture
 	my_signal.connect(upgrade_self)
 
