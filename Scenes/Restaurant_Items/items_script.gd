@@ -5,6 +5,7 @@ extends Node2D
 @export var state : int = 0
 @export var my_texture : Texture
 @export var my_signal : Signal
+@export var my_costs : Array
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,4 +20,7 @@ func _physics_process(_delta):
 	
 func upgrade_self():
 	if state < 3:
-		state += 1
+		if StatsScript.money >= my_costs[state]:
+			StatsScript.money -= my_costs[state]
+			state += 1
+			print(StatsScript.money)

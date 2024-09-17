@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cs4eoabc8egsl" path="res://Assets/Restaurant/Kitchen-Sheet.png" id="4_ll4n0"]
 [ext_resource type="Script" path="res://Scenes/Restaurant_Items/kitchen.gd" id="5_cl8tt"]
 [ext_resource type="PackedScene" uid="uid://b5gqbsyhik2js" path="res://Scenes/Upgrade_Menu/upgrade_menu.tscn" id="5_ried7"]
-[ext_resource type="Script" path="res://Scenes/Restaurant_Items/restaurant_items.gd" id="7_3xxhm"]
+[ext_resource type="Script" path="res://Scenes/Restaurant_Items/furniture.gd" id="7_3xxhm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fueti"]
 size = Vector2(85, 1079)
