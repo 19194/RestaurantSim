@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://bprqe327mb16o"]
+
+[ext_resource type="PackedScene" uid="uid://cd7al3fwa1kd6" path="res://Scenes/HUD_Items/hud_item.tscn" id="1_i2wy4"]
+[ext_resource type="Texture2D" uid="uid://p1c2at61vf7i" path="res://Assets/HUD/Money HUD.png" id="2_ds0on"]
+[ext_resource type="Script" path="res://Scenes/HUD_Items/hud_money.gd" id="2_euwgq"]
+[ext_resource type="Script" path="res://Scenes/HUD_Items/hud_item_time.gd" id="4_o0dj8"]
+[ext_resource type="Texture2D" uid="uid://b1vl0qdyg8bmr" path="res://Assets/HUD/Time HUD.png" id="5_14y15"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="HUD_Money" parent="." instance=ExtResource("1_i2wy4")]
+offset_left = 1430.62
+offset_right = 1430.62
+script = ExtResource("2_euwgq")
+my_texture = ExtResource("2_ds0on")
+
+[node name="HUD_Time" parent="." instance=ExtResource("1_i2wy4")]
+script = ExtResource("4_o0dj8")
+my_texture = ExtResource("5_14y15")

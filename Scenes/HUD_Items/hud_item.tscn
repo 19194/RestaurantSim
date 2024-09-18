@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd7al3fwa1kd6"]
+
+[ext_resource type="Script" path="res://Scenes/HUD_Items/hud_item.gd" id="1_lc8t7"]
+[ext_resource type="FontFile" uid="uid://dmp8m1up2ie2b" path="res://Assets/pixel_font.otf" id="1_t58l0"]
+[ext_resource type="Texture2D" uid="uid://p1c2at61vf7i" path="res://Assets/HUD/Money HUD.png" id="2_ywkae"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lc8t7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(16.875, 16.875)
+texture = ExtResource("2_ywkae")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 142.104
+offset_top = 27.437
+offset_right = 371.104
+offset_bottom = 111.812
+theme_override_colors/font_color = Color(0.913725, 0.694118, 0.164706, 1)
+theme_override_colors/font_outline_color = Color(0.629471, 0.393242, 0.123161, 1)
+theme_override_constants/outline_size = 36
+theme_override_fonts/font = ExtResource("1_t58l0")
+theme_override_font_sizes/font_size = 64
+text = "$7000"
