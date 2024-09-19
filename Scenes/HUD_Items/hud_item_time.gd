@@ -23,12 +23,12 @@ func _physics_process(delta: float) -> void:
 	
 	# Determine AM/PM suffix
 	var am_pm = "AM"
-	if time > 12:
+	if time > 12 and time < 25:
 		am_pm = "PM"
 		time -= 12
-	if time > 24:
+	if (time + 12) > 24:
 		am_pm = "AM"
-		time -= 12
+		total_time = 1
 		
 	label.text = str(time) + am_pm
 	
