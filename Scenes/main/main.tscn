@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cqw4687f0cxuf" path="res://Scenes/Restaurant/restaurant.tscn" id="2_832lw"]
 [ext_resource type="PackedScene" uid="uid://c68jqjw7ghfi6" path="res://Scenes/Restaurant_Items/restaurant_items.tscn" id="2_vp7og"]
 [ext_resource type="Script" path="res://Scenes/Restaurant_Items/walls.gd" id="3_6a0d2"]
-[ext_resource type="PackedScene" uid="uid://dm0gmu2mctita" path="res://Scenes/interact_button/interact_button.tscn" id="3_f4xqx"]
+[ext_resource type="PackedScene" uid="uid://dm0gmu2mctita" path="res://Scenes/Interact_Button/interact_button.tscn" id="3_f4xqx"]
 [ext_resource type="Texture2D" uid="uid://v621mjjeo8sx" path="res://Assets/Restaurant/Furniture-Sheet.png" id="3_vpyke"]
 [ext_resource type="Texture2D" uid="uid://clqoa2anjhrt7" path="res://Assets/Restaurant/Wall+Floor-Sheet.png" id="3_xjnf2"]
 [ext_resource type="Texture2D" uid="uid://cs4eoabc8egsl" path="res://Assets/Restaurant/Kitchen-Sheet.png" id="4_ll4n0"]

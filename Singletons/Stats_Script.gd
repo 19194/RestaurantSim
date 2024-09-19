@@ -6,6 +6,10 @@ var time : int = 0
 var day : int = 0
 var satisfaction : int = 0
 
+# Day Stats
+var day_length = [6, 24]
+var outside_changes = [6, 10, 17, 21]
+
 # Game Stats
 var furniture_state = 0
 var wall_state = 0
