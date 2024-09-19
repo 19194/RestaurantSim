@@ -3,7 +3,7 @@ extends Node
 # Player Stats
 var money : int = 3000
 var time : int = 0
-var day : int = 0
+var day : int = 1
 var satisfaction : int = 0
 
 # Day Stats

@@ -11,7 +11,7 @@ func _ready() -> void:
 
 	
 func _physics_process(delta: float) -> void:
-	total_time += delta * 2
+	total_time += delta * 100
 	
 	var time = int(total_time)
 	StatsScript.time = time
@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 		am_pm = "AM"
 		total_time = start_of_day
 		time = start_of_day
+		StatsScript.day += 1
 	
 		
 	label.text = str(time) + am_pm

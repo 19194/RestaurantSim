@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/HUD_Items/hud_item.gd" id="1_lc8t7"]
 [ext_resource type="FontFile" uid="uid://dmp8m1up2ie2b" path="res://Assets/pixel_font.otf" id="1_t58l0"]
-[ext_resource type="Texture2D" uid="uid://p1c2at61vf7i" path="res://Assets/HUD/Money HUD.png" id="2_ywkae"]
+[ext_resource type="Texture2D" uid="uid://hg1g3lg4u5e1" path="res://Assets/HUD/money_hud.png" id="2_yaa4w"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -10,8 +10,8 @@ anchors_preset = 0
 script = ExtResource("1_lc8t7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(16.875, 16.875)
-texture = ExtResource("2_ywkae")
+scale = Vector2(14.829, 14.975)
+texture = ExtResource("2_yaa4w")
 centered = false
 
 [node name="Label" type="Label" parent="."]

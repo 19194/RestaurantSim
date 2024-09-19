@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p1c2at61vf7i"
-path="res://.godot/imported/Money HUD.png-496db413bce08ca9ddd79ef9ac0459d3.ctex"
+uid="uid://c2chtbsgegelh"
+path="res://.godot/imported/time_hud.png-005a052f177adc5d5b165eb577c3eaa1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/HUD/Money HUD.png"
-dest_files=["res://.godot/imported/Money HUD.png-496db413bce08ca9ddd79ef9ac0459d3.ctex"]
+source_file="res://Assets/HUD/time_hud.png"
+dest_files=["res://.godot/imported/time_hud.png-005a052f177adc5d5b165eb577c3eaa1.ctex"]
 
 [params]
 
