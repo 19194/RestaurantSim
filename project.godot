@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 SignalScript="*res://Singletons/Signal_Script.gd"
 StatsScript="*res://Singletons/Stats_Script.gd"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+
 [display]
 
 window/size/viewport_width=1920
