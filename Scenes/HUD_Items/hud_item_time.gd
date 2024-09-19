@@ -11,7 +11,7 @@ func _ready() -> void:
 
 	
 func _physics_process(delta: float) -> void:
-	total_time += delta * 100
+	total_time += delta * 2
 	
 	var time = int(total_time)
 	StatsScript.time = time
