@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://csvrfe4qgv0l0"]
+[gd_scene load_steps=17 format=3 uid="uid://csvrfe4qgv0l0"]
 
 [ext_resource type="Script" path="res://Scenes/main/main.gd" id="1_pwcn5"]
 [ext_resource type="PackedScene" uid="uid://ga05v1nydao1" path="res://Scenes/Player/player.tscn" id="1_xnj7k"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://c68jqjw7ghfi6" path="res://Scenes/Restaurant_Items/restaurant_items.tscn" id="2_vp7og"]
 [ext_resource type="Script" path="res://Scenes/Restaurant_Items/walls.gd" id="3_6a0d2"]
 [ext_resource type="PackedScene" uid="uid://dm0gmu2mctita" path="res://Scenes/Interact_Button/interact_button.tscn" id="3_f4xqx"]
+[ext_resource type="Script" path="res://Scenes/Restaurant_Items/outside.gd" id="3_mvhq6"]
 [ext_resource type="Texture2D" uid="uid://v621mjjeo8sx" path="res://Assets/Restaurant/Furniture-Sheet.png" id="3_vpyke"]
 [ext_resource type="Texture2D" uid="uid://clqoa2anjhrt7" path="res://Assets/Restaurant/Wall+Floor-Sheet.png" id="3_xjnf2"]
+[ext_resource type="Texture2D" uid="uid://7hobvnocxdag" path="res://Assets/Restaurant/Background-Sheet.png" id="4_dnijk"]
 [ext_resource type="Texture2D" uid="uid://cs4eoabc8egsl" path="res://Assets/Restaurant/Kitchen-Sheet.png" id="4_ll4n0"]
 [ext_resource type="Script" path="res://Scenes/Restaurant_Items/kitchen.gd" id="5_cl8tt"]
 [ext_resource type="PackedScene" uid="uid://b5gqbsyhik2js" path="res://Scenes/Upgrade_Menu/upgrade_menu.tscn" id="5_ried7"]
@@ -19,6 +21,11 @@ size = Vector2(85, 1079)
 
 [node name="main" type="Node2D"]
 script = ExtResource("1_pwcn5")
+
+[node name="Outside" parent="." instance=ExtResource("2_vp7og")]
+position = Vector2(438.75, 320.625)
+script = ExtResource("3_mvhq6")
+my_texture = ExtResource("4_dnijk")
 
 [node name="Walls" parent="." instance=ExtResource("2_vp7og")]
 script = ExtResource("3_6a0d2")
