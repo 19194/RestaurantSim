@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bprqe327mb16o"]
+[gd_scene load_steps=10 format=3 uid="uid://bprqe327mb16o"]
 
 [ext_resource type="PackedScene" uid="uid://cd7al3fwa1kd6" path="res://Scenes/HUD_Items/hud_item.tscn" id="1_i2wy4"]
 [ext_resource type="Script" path="res://Scenes/HUD_Items/hud_money.gd" id="2_euwgq"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c2chtbsgegelh" path="res://Assets/HUD/time_hud.png" id="5_witn0"]
 [ext_resource type="Script" path="res://Scenes/HUD_Items/hud_item_day.gd" id="6_fnmww"]
 [ext_resource type="Texture2D" uid="uid://dgpcg6ap3tgl7" path="res://Assets/HUD/date_hud.png" id="6_qeybs"]
+[ext_resource type="Script" path="res://Scenes/HUD/hud_emotion.gd" id="8_3fp3d"]
+[ext_resource type="Texture2D" uid="uid://28rvt0il8ibw" path="res://Assets/HUD/emotions_hud.png" id="8_satmk"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -25,3 +27,18 @@ offset_top = 135.0
 offset_bottom = 135.0
 script = ExtResource("6_fnmww")
 my_texture = ExtResource("6_qeybs")
+
+[node name="HUD_Emotion" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1491.0
+offset_top = 135.0
+offset_right = 1531.0
+offset_bottom = 175.0
+script = ExtResource("8_3fp3d")
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD_Emotion"]
+scale = Vector2(14.829, 14.829)
+texture = ExtResource("8_satmk")
+centered = false
+vframes = 4
