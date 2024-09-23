@@ -8,6 +8,8 @@ var total_time : float = 0.0
 func _ready() -> void:
 	sprite_2d.texture = my_texture
 	total_time = start_of_day
+	SignalScript.upgrade_button.connect(pause_time)
+	SignalScript.close_upgrade.connect(unpause_time)
 
 	
 func _physics_process(delta: float) -> void:
@@ -30,3 +32,8 @@ func _physics_process(delta: float) -> void:
 		
 	label.text = str(time) + am_pm
 	
+func pause_time():
+	set_physics_process(false)
+	
+func unpause_time():
+	set_physics_process(true)
