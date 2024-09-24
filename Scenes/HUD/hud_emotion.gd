@@ -17,7 +17,6 @@ func _process(delta):
 func change_emotion():
 	var values = [0, 25, 50, 75, 100]
 	for i in range(0, 4):
-		print(satisfaction)
 		if satisfaction >= values[i] and satisfaction < values[i + 1]:
 			state = i
 		elif satisfaction >= 100:
