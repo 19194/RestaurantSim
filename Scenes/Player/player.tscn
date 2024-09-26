@@ -161,7 +161,7 @@ shape = SubResource("RectangleShape2D_e0hdi")
 tree_root = SubResource("AnimationNodeStateMachine_20b8s")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0, 0)
-parameters/Walk/blend_position = Vector2(0, 0)
+parameters/Walk/blend_position = Vector2(-0.631818, -0.0851064)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

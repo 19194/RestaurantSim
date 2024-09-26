@@ -11,10 +11,6 @@ func _ready() -> void:
 	SignalScript.upgrade_button.connect(hide_hud)
 	SignalScript.close_upgrade.connect(show_hud)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func hide_hud():
 	hud_day.visible = false

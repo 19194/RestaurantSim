@@ -9,7 +9,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	satisfaction = StatsScript.satisfaction
 	change_emotion()
 	sprite_2d.frame = state
