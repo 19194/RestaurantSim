@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var upgrade_menu = $UpgradeMenu
 @onready var player = $Player
-@onready var interactive_button = $Interactive_Button
+@onready var button_upgrade = $Button_Upgrade
 
 @onready var walls: Node2D = $Walls
 @onready var kitchen: Node2D = $Kitchen
@@ -21,7 +21,7 @@ func _process(_delta):
 		SignalScript.close_upgrade.emit()
 		upgrade_menu.visible = false
 		player.process_mode = Node.PROCESS_MODE_INHERIT
-		interactive_button.process_mode = Node.PROCESS_MODE_INHERIT
+		button_upgrade.process_mode = Node.PROCESS_MODE_INHERIT
 	
 
 func work_button_pressed():
@@ -32,7 +32,7 @@ func upgrade_button_pressed():
 	upgrade_menu.position.x = offset
 	upgrade_menu.visible = true
 	player.process_mode = Node.PROCESS_MODE_DISABLED
-	interactive_button.process_mode = Node.PROCESS_MODE_DISABLED
+	button_upgrade.process_mode = Node.PROCESS_MODE_DISABLED
 	
 func upgrade_kitchen():
 	pass
