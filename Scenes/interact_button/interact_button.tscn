@@ -70,8 +70,9 @@ grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.313726)
 theme_override_constants/shadow_outline_size = 15
 theme_override_fonts/font = ExtResource("3_l6k2h")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "[SPACE] TO INTERACT"
+horizontal_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

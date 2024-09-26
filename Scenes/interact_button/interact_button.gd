@@ -10,7 +10,7 @@ var player_in_range = false
 
 func _ready():
 	interactive_button.visible = false  # Hide the button initially
-	label.text = "[Space] to " + button_signal
+	label.text = "[SPACE] to " + button_signal
   
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("Space"):  # Default is the Enter key or Spacebar

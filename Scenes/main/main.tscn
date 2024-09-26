@@ -62,8 +62,12 @@ position = Vector2(5426, 539)
 shape = SubResource("RectangleShape2D_fueti")
 
 [node name="Button_Upgrade" parent="." instance=ExtResource("3_f4xqx")]
-position = Vector2(1803, 649)
+position = Vector2(1803, 650)
 button_signal = "Upgrade"
+
+[node name="Button_Work" parent="." instance=ExtResource("3_f4xqx")]
+position = Vector2(4200, 650)
+button_signal = "Work"
 
 [node name="Player" parent="." instance=ExtResource("1_xnj7k")]
 position = Vector2(808.125, 421.875)
