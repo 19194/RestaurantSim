@@ -36,6 +36,12 @@ position = Vector2(3375, 0)
 script = ExtResource("5_cl8tt")
 my_texture = ExtResource("4_ll4n0")
 
+[node name="Player" parent="." instance=ExtResource("1_xnj7k")]
+position = Vector2(808.125, 421.875)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
 [node name="Furniture" parent="." instance=ExtResource("2_vp7og")]
 script = ExtResource("7_3xxhm")
 my_texture = ExtResource("3_vpyke")
@@ -68,12 +74,6 @@ button_signal = "Upgrade"
 [node name="Button_Work" parent="." instance=ExtResource("3_f4xqx")]
 position = Vector2(4200, 650)
 button_signal = "Work"
-
-[node name="Player" parent="." instance=ExtResource("1_xnj7k")]
-position = Vector2(808.125, 421.875)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
 
 [node name="UpgradeMenu" parent="." instance=ExtResource("5_ried7")]
 visible = false
