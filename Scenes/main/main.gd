@@ -7,6 +7,7 @@ extends Node2D
 @onready var walls: Node2D = $Walls
 @onready var kitchen: Node2D = $Kitchen
 @onready var furniture: Node2D = $Furniture
+@onready var button_work = $Button_Work
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +26,10 @@ func _process(_delta):
 	
 
 func work_button_pressed():
-	print("work")
+	button_work.visible = false
+	button_work.process_mode = Node.PROCESS_MODE_DISABLED
+	button_upgrade.process_mode = Node.PROCESS_MODE_DISABLED
+	
 
 func upgrade_button_pressed():
 	var offset : float = player.position.x - 808.125

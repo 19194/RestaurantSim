@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://csvrfe4qgv0l0"]
+[gd_scene load_steps=18 format=3 uid="uid://csvrfe4qgv0l0"]
 
 [ext_resource type="Script" path="res://Scenes/main/main.gd" id="1_pwcn5"]
 [ext_resource type="PackedScene" uid="uid://ga05v1nydao1" path="res://Scenes/Player/player.tscn" id="1_xnj7k"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b5gqbsyhik2js" path="res://Scenes/Upgrade_Menu/upgrade_menu.tscn" id="5_ried7"]
 [ext_resource type="Script" path="res://Scenes/Restaurant_Items/furniture.gd" id="7_3xxhm"]
 [ext_resource type="PackedScene" uid="uid://bprqe327mb16o" path="res://Scenes/HUD/hud.tscn" id="10_ff5mr"]
+[ext_resource type="PackedScene" uid="uid://rlc5lepiubux" path="res://Scenes/Screen_Fade/Screen_Fade.tscn" id="16_alj1u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fueti"]
 size = Vector2(85, 1079)
@@ -68,10 +69,12 @@ position = Vector2(5426, 539)
 shape = SubResource("RectangleShape2D_fueti")
 
 [node name="Button_Upgrade" parent="." instance=ExtResource("3_f4xqx")]
+visible = false
 position = Vector2(1803, 650)
 button_signal = "Upgrade"
 
 [node name="Button_Work" parent="." instance=ExtResource("3_f4xqx")]
+visible = false
 position = Vector2(4200, 650)
 button_signal = "Work"
 
@@ -79,3 +82,5 @@ button_signal = "Work"
 visible = false
 
 [node name="HUD" parent="." instance=ExtResource("10_ff5mr")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("16_alj1u")]

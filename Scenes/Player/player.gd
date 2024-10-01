@@ -23,11 +23,22 @@ func _physics_process(_delta):
 	
 func update_animation_tree(move_input : Vector2):
 	if (move_input != Vector2.ZERO): # if the player is moving
-		animation_tree.set("parameters/Walk/blend_position", move_input) # set the animation in the direction of movement for walk
-		animation_tree.set("parameters/Idle/blend_position", move_input) # set the animation in the direction of movement for idle
+		if StatsScript.holding_food == false:
+			animation_tree.set("parameters/Walk/blend_position", move_input) # set the animation in the direction of movement for walk
+			animation_tree.set("parameters/Idle/blend_position", move_input) # set the animation in the direction of movement for idle
+		else:
+			animation_tree.set("parameters/Walk_Food/blend_position", move_input) # set the animation in the direction of movement for walk
+			animation_tree.set("parameters/Idle_Food/blend_position", move_input) # set the animation in the direction of movement for idle
+			
 		
 func update_animation_state():
-	if (velocity != Vector2.ZERO):
-		state_machine.travel("Walk")
-	elif (velocity == Vector2.ZERO):
-		state_machine.travel("Idle")
+	if StatsScript.holding_food == false:
+		if (velocity != Vector2.ZERO):
+			state_machine.travel("Walk")
+		elif (velocity == Vector2.ZERO):
+			state_machine.travel("Idle")
+	else:
+		if (velocity != Vector2.ZERO):
+			state_machine.travel("Walk_Food")
+		elif (velocity == Vector2.ZERO):
+			state_machine.travel("Idle_Food")

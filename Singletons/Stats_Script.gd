@@ -6,6 +6,8 @@ var time : int = 0
 var day : int = 1
 var satisfaction : int = 0
 
+var holding_food = false
+
 # Day Stats
 var day_length = [6, 24]
 var outside_changes = [6, 10, 17, 21]
