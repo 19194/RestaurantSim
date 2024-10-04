@@ -7,7 +7,7 @@ var day : int = 1
 var satisfaction : int = 0
 
 var holding_food = false
-
+var locations = [[320.625, 1], [500, -1], [600, 1], [700, -1]]
 # Day Stats
 var day_length = [6, 24]
 var outside_changes = [6, 10, 17, 21]

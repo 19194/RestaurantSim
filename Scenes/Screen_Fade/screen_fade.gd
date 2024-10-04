@@ -19,6 +19,7 @@ func fade_from_black():
 
 func _process(delta):
 	if fading_out:
+		visible = true
 		color_rect.color.a += fade_speed * delta  # Increase alpha to fade out
 		if color_rect.color.a >= 1:
 			color_rect.color.a = 1
@@ -30,6 +31,7 @@ func _process(delta):
 		if color_rect.color.a <= 0:
 			color_rect.color.a = 0
 			fading_in = false
+			visible = false
 			# Add any logic for when the screen is fully faded back.
 			
 

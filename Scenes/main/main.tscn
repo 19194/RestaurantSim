@@ -84,3 +84,4 @@ visible = false
 [node name="HUD" parent="." instance=ExtResource("10_ff5mr")]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("16_alj1u")]
+visible = false
