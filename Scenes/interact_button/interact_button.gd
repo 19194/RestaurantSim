@@ -3,13 +3,11 @@ extends Node2D  # or Control if using a UI node
 @export var button_signal: String = ""
 
 var player_in_range = false
-@onready var interactive_button = $"."
 @onready var animation_player = $AnimationPlayer
 @onready var label = $Label
 
-
 func _ready():
-	interactive_button.visible = false  # Hide the button initially
+	visible = false  # Hide the button initially
 	label.text = "[SPACE] to " + button_signal
   
 func _process(_delta):
@@ -21,11 +19,11 @@ func _process(_delta):
 
 func _on_area_2d_area_entered(_body):
 	player_in_range = true
-	interactive_button.visible = true
+	visible = true
 	animation_player.play("idle")
 
 
 func _on_area_2d_area_exited(_area):
 	player_in_range = false
-	interactive_button.visible = false
+	visible = false
 	animation_player.stop()

@@ -8,12 +8,17 @@ extends Node2D
 @onready var kitchen: Node2D = $Kitchen
 @onready var furniture: Node2D = $Furniture
 @onready var button_work = $Button_Work
+@onready var npc_array: Node = $NPC_Array
+@onready var timer: Timer = $Timer
+
+var npc_scene = preload("res://Scenes/NPC/npc.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalScript.work_button.connect(work_button_pressed)
 	SignalScript.upgrade_button.connect(upgrade_button_pressed)
+	timer.start(1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,5 +43,15 @@ func upgrade_button_pressed():
 	player.process_mode = Node.PROCESS_MODE_DISABLED
 	button_upgrade.process_mode = Node.PROCESS_MODE_DISABLED
 	
-func upgrade_kitchen():
-	pass
+func spawn_npc():
+	if StatsScript.locations.size() != 0:
+		var new_npc = npc_scene.instantiate()
+		new_npc.my_texture = load("res://Assets/NPC/Alan NPC.png")
+		new_npc.position = Vector2(-200, 421.875)
+		npc_array.add_child(new_npc)
+	
+	timer.start(1)
+	
+
+func _on_timer_timeout() -> void:
+	spawn_npc()

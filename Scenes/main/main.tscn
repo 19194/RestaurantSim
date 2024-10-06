@@ -43,6 +43,8 @@ position = Vector2(808.125, 421.875)
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../Camera2D")
 
+[node name="NPC_Array" type="Node" parent="."]
+
 [node name="Furniture" parent="." instance=ExtResource("2_vp7og")]
 script = ExtResource("7_3xxhm")
 my_texture = ExtResource("3_vpyke")
@@ -85,3 +87,7 @@ visible = false
 
 [node name="CanvasLayer" parent="." instance=ExtResource("16_alj1u")]
 visible = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
