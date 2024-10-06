@@ -184,6 +184,7 @@ _data = {
 size = Vector2(374, 594)
 
 [node name="NPC" type="Node2D"]
+z_index = -1
 script = ExtResource("1_cpqhh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -205,6 +206,7 @@ parameters/Sit/blend_position = Vector2(-0.221172, -0.298153)
 parameters/Walk/blend_position = Vector2(0.0576559, -0.00791562)
 
 [node name="Interact_Button" type="Node2D" parent="."]
+z_index = 2
 position = Vector2(185.625, 229)
 
 [node name="Sprite2D" type="Sprite2D" parent="Interact_Button"]

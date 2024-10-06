@@ -24,15 +24,18 @@ size = Vector2(85, 1079)
 script = ExtResource("1_pwcn5")
 
 [node name="Outside" parent="." instance=ExtResource("2_vp7og")]
+z_index = -1
 position = Vector2(438.75, 320.625)
 script = ExtResource("3_mvhq6")
 my_texture = ExtResource("4_dnijk")
 
 [node name="Walls" parent="." instance=ExtResource("2_vp7og")]
+z_index = -1
 script = ExtResource("3_6a0d2")
 my_texture = ExtResource("3_xjnf2")
 
 [node name="Kitchen" parent="." instance=ExtResource("2_vp7og")]
+z_index = -1
 position = Vector2(3375, 0)
 script = ExtResource("5_cl8tt")
 my_texture = ExtResource("4_ll4n0")
