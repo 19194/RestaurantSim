@@ -10,6 +10,7 @@ func _ready() -> void:
 	total_time = start_of_day
 	SignalScript.upgrade_button.connect(pause_time)
 	SignalScript.close_upgrade.connect(unpause_time)
+	SignalScript.work_button.connect(work)
 
 	
 func _physics_process(delta: float) -> void:
@@ -37,3 +38,7 @@ func pause_time():
 	
 func unpause_time():
 	set_physics_process(true)
+	
+func work():
+	await get_tree().create_timer(1).timeout
+	total_time += 0.5

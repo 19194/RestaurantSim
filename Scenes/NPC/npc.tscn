@@ -181,7 +181,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_givch"]
-size = Vector2(374, 594)
+size = Vector2(322.75, 594)
 
 [node name="NPC" type="Node2D"]
 z_index = -1

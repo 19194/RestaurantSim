@@ -10,6 +10,7 @@ extends Node2D
 var npc_scene = preload("res://Scenes/NPC/npc.tscn")
 #var spawn_timer_range = Vector2(5, 60)
 var spawn_timer_range = Vector2(1, 10)
+var npc_textures = [load("res://Assets/NPC/Alan NPC.png"), load("res://Assets/NPC/HawkTuah_NPC.png")]
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,7 +50,7 @@ func upgrade_button_pressed():
 func spawn_npc():
 	if StatsScript.locations.size() != 0:
 		var new_npc = npc_scene.instantiate()
-		new_npc.my_texture = load("res://Assets/NPC/Alan NPC.png")
+		new_npc.my_texture = npc_textures.pick_random()
 		new_npc.position = Vector2(-200, 421.875)
 		npc_array.add_child(new_npc)
 	

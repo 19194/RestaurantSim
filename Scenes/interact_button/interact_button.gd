@@ -17,13 +17,15 @@ func _process(_delta):
 		elif button_signal == "Upgrade":
 			SignalScript.upgrade_button.emit()
 
-func _on_area_2d_area_entered(_body):
-	player_in_range = true
-	visible = true
-	animation_player.play("idle")
+func _on_area_2d_area_entered(area):
+	if area.name == "Interact_Area":
+		player_in_range = true
+		visible = true
+		animation_player.play("idle")
 
 
-func _on_area_2d_area_exited(_area):
-	player_in_range = false
-	visible = false
-	animation_player.stop()
+func _on_area_2d_area_exited(area):
+	if area.name == "Interact_Area":
+		player_in_range = false
+		visible = false
+		animation_player.stop()
