@@ -5,6 +5,7 @@ extends Node2D
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var interact_button: Node2D = $Interact_Button
 @onready var timer: Timer = $Timer
+@onready var stats = StatsScript
 
 @export var my_texture : Texture
 
@@ -13,27 +14,30 @@ var location
 var at_location = false
 var move_speed = 350
 var player_in_range = false
+var satisfaction = 0
+var wait_time = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sprite_2d.texture = my_texture
 	interact_button.visible = false
-	location = StatsScript.locations.pick_random()
-	StatsScript.locations.erase(location)
+	location = stats.locations.pick_random()
+	stats.locations.erase(location)
 	
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("Space"):
-		StatsScript.holding_food = false
+		stats.holding_food = false
 		player_in_range = false
 		interact_button.visible = false
 		$Interact_Button/AnimationPlayer.stop()
 		timer.start(randi_range(1, 10))
 		await timer.timeout
-		StatsScript.locations.append(location)
+		stats.locations.append(location)
 		location = [-600, 0]
 		at_location = false
+		calc_satisfaction()
 		
 	if position.x <= -500:
 		queue_free()
@@ -45,6 +49,7 @@ func _physics_process(delta: float) -> void:
 		state_machine.travel("Walk")
 		walk_to_location(delta)
 	else:
+		wait_time += delta
 		state_machine.travel("Sit")
 		animation_tree.set("parameters/Sit/blend_position", Vector2(location[1], 0))
 	
@@ -62,13 +67,33 @@ func walk_to_location(delta):
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if StatsScript.holding_food == true:
-		player_in_range = true
-		interact_button.visible = true
-		$Interact_Button/AnimationPlayer.play("idle")
+	if area.name == "Interact_Area":
+		if stats.holding_food and at_location:
+			player_in_range = true
+			interact_button.visible = true
+			$Interact_Button/AnimationPlayer.play("idle")
 
 
-func _on_area_2d_area_exited(area: Area2D) -> void:
+func _on_area_2d_area_exited(_area: Area2D) -> void:
 	player_in_range = false
 	interact_button.visible = false
 	$Interact_Button/AnimationPlayer.stop()
+	
+func calc_satisfaction():
+	var restaurant_effect = 0
+	restaurant_effect += stats.furniture_effect[stats.furniture_state]
+	restaurant_effect += stats.wall_effect[stats.wall_state]
+	restaurant_effect += stats.kitchen_effect[stats.kitchen_state]
+	
+	satisfaction = int((70 + restaurant_effect * 2) / wait_time)
+	satisfaction += randi_range(-10, int(restaurant_effect/2))
+	stats.satisfaction = int((satisfaction + stats.satisfaction) / 2)
+	stats.satisfaction = clamp(stats.satisfaction, 0, 100)
+	
+	var money = int(satisfaction * randf_range(0.7, 3))
+	money = clamp(money, 5, 1000)
+	stats.money += money
+	print("money: " + str(money))
+	print("wait time: " + str(wait_time))
+	print("satisfaction: " + str(stats.satisfaction) + ", " + str(satisfaction))
+	

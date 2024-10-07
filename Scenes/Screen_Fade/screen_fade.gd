@@ -29,12 +29,12 @@ func _process(delta):
 			# You can add additional logic here, like signaling when the screen is fully black.
 	elif fading_in:
 		StatsScript.holding_food = true
+		player.process_mode = Node.PROCESS_MODE_INHERIT
 		color_rect.color.a -= fade_speed * delta  # Decrease alpha to fade in
 		if color_rect.color.a <= 0:
 			color_rect.color.a = 0
 			fading_in = false
 			visible = false
-			player.process_mode = Node.PROCESS_MODE_INHERIT
 			# Add any logic for when the screen is fully faded back.
 			
 

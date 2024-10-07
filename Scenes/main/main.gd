@@ -3,22 +3,20 @@ extends Node2D
 @onready var upgrade_menu = $UpgradeMenu
 @onready var player = $Player
 @onready var button_upgrade = $Button_Upgrade
-
-@onready var walls: Node2D = $Walls
-@onready var kitchen: Node2D = $Kitchen
-@onready var furniture: Node2D = $Furniture
 @onready var button_work = $Button_Work
 @onready var npc_array: Node = $NPC_Array
 @onready var timer: Timer = $Timer
 
 var npc_scene = preload("res://Scenes/NPC/npc.tscn")
+#var spawn_timer_range = Vector2(5, 60)
+var spawn_timer_range = Vector2(1, 10)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SignalScript.work_button.connect(work_button_pressed)
 	SignalScript.upgrade_button.connect(upgrade_button_pressed)
-	timer.start(1)
+	timer.start(randi_range(spawn_timer_range[0], spawn_timer_range[1]))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,12 +26,17 @@ func _process(_delta):
 		upgrade_menu.visible = false
 		player.process_mode = Node.PROCESS_MODE_INHERIT
 		button_upgrade.process_mode = Node.PROCESS_MODE_INHERIT
+		
+	if StatsScript.holding_food == true:
+		button_work.process_mode = Node.PROCESS_MODE_DISABLED
+		button_upgrade.process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		button_work.process_mode = Node.PROCESS_MODE_INHERIT
+		button_upgrade.process_mode = Node.PROCESS_MODE_INHERIT
 	
 
 func work_button_pressed():
 	button_work.visible = false
-	button_work.process_mode = Node.PROCESS_MODE_DISABLED
-	button_upgrade.process_mode = Node.PROCESS_MODE_DISABLED
 	
 
 func upgrade_button_pressed():
@@ -50,7 +53,7 @@ func spawn_npc():
 		new_npc.position = Vector2(-200, 421.875)
 		npc_array.add_child(new_npc)
 	
-	timer.start(1)
+	timer.start(randi_range(spawn_timer_range[0], spawn_timer_range[1]))
 	
 
 func _on_timer_timeout() -> void:

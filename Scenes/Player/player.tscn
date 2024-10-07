@@ -257,7 +257,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbwof"]
-size = Vector2(126, 84)
+size = Vector2(10, 84)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_kxsbj")
@@ -287,8 +287,8 @@ libraries = {
 "": SubResource("AnimationLibrary_qto55")
 }
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Interact_Area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact_Area"]
 position = Vector2(151, 139)
 shape = SubResource("RectangleShape2D_mbwof")
