@@ -1,0 +1,60 @@
+[gd_scene load_steps=11 format=3 uid="uid://due3bbbtypn7a"]
+
+[ext_resource type="Texture2D" uid="uid://cqmj8mqb3f0ln" path="res://Assets/Title/TitleBackground.png" id="1_404gx"]
+[ext_resource type="Script" path="res://Scenes/TitleScreen/title_screen.gd" id="1_eapt5"]
+[ext_resource type="Texture2D" uid="uid://dbc2nrh0jar5f" path="res://Assets/Title/PlayButtonSheet.png" id="2_rscqd"]
+[ext_resource type="Texture2D" uid="uid://br34r3pws5mqd" path="res://Assets/Title/ExitButtonSheet.png" id="3_7mpl4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82vea"]
+texture = ExtResource("2_rscqd")
+region_rect = Rect2(0, 24, 19, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_842tk"]
+texture = ExtResource("2_rscqd")
+region_rect = Rect2(0, 12, 19, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah7ln"]
+texture = ExtResource("2_rscqd")
+region_rect = Rect2(0, 0, 19, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13vh3"]
+texture = ExtResource("3_7mpl4")
+region_rect = Rect2(0, 24, 19, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4efhq"]
+texture = ExtResource("3_7mpl4")
+region_rect = Rect2(0, 12, 19, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y7xds"]
+texture = ExtResource("3_7mpl4")
+region_rect = Rect2(0, 0, 19, 12)
+
+[node name="TitleScreen" type="Node2D"]
+scale = Vector2(16.875, 16.875)
+script = ExtResource("1_eapt5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_404gx")
+centered = false
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 36.0
+offset_top = 19.0
+offset_right = 55.0
+offset_bottom = 31.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_82vea")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_842tk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ah7ln")
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 59.0
+offset_top = 19.0
+offset_right = 78.0
+offset_bottom = 31.0
+focus_mode = 0
+theme_override_styles/hover = SubResource("StyleBoxTexture_13vh3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4efhq")
+theme_override_styles/normal = SubResource("StyleBoxTexture_y7xds")
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
