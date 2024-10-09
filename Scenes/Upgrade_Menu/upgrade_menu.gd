@@ -28,6 +28,10 @@ func update_costs():
 	check_costs(wall_int, StatsScript.wall_cost, label_walls_cost)
 	check_costs(kitchen_int, StatsScript.kitchen_cost, label_kitchen_cost)
 	
+	disable_buttons(furniture_int, StatsScript.furniture_cost, button_furniture)
+	disable_buttons(wall_int, StatsScript.wall_cost, button_walls)
+	disable_buttons(kitchen_int, StatsScript.kitchen_cost, button_kitchen)
+	
 func check_costs(state, costs, label):
 	if state < 3:
 		label.text = "Cost: $" + str(costs[state])
@@ -46,3 +50,12 @@ func _on_button_walls_pressed() -> void:
 
 func _on_button_kitchen_pressed() -> void:
 	SignalScript.kitchen_upgrade.emit()
+	
+func disable_buttons(state, cost, button):
+	if state < 3:
+		if cost[state] >= StatsScript.money:
+			button.disabled = true
+		else:
+			button.disabled = false
+	else:
+		button.disabled = true
