@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://csvrfe4qgv0l0"]
+[gd_scene load_steps=19 format=3 uid="uid://csvrfe4qgv0l0"]
 
 [ext_resource type="Script" path="res://Scenes/main/main.gd" id="1_pwcn5"]
 [ext_resource type="PackedScene" uid="uid://ga05v1nydao1" path="res://Scenes/Player/player.tscn" id="1_xnj7k"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://Scenes/Restaurant_Items/furniture.gd" id="7_3xxhm"]
 [ext_resource type="PackedScene" uid="uid://bprqe327mb16o" path="res://Scenes/HUD/hud.tscn" id="10_ff5mr"]
 [ext_resource type="PackedScene" uid="uid://rlc5lepiubux" path="res://Scenes/Screen_Fade/Screen_Fade.tscn" id="16_alj1u"]
+[ext_resource type="PackedScene" uid="uid://bxcgy2x4svmqn" path="res://Scenes/QuitMenu/QuitMenu.tscn" id="17_udqe4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fueti"]
 size = Vector2(85, 1079)
@@ -92,5 +93,8 @@ visible = false
 visible = false
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="QuitMenu" parent="." instance=ExtResource("17_udqe4")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

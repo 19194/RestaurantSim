@@ -1,9 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://due3bbbtypn7a"]
+[gd_scene load_steps=14 format=3 uid="uid://due3bbbtypn7a"]
 
 [ext_resource type="Texture2D" uid="uid://cqmj8mqb3f0ln" path="res://Assets/Title/TitleBackground.png" id="1_404gx"]
 [ext_resource type="Script" path="res://Scenes/TitleScreen/title_screen.gd" id="1_eapt5"]
 [ext_resource type="Texture2D" uid="uid://dbc2nrh0jar5f" path="res://Assets/Title/PlayButtonSheet.png" id="2_rscqd"]
 [ext_resource type="Texture2D" uid="uid://br34r3pws5mqd" path="res://Assets/Title/ExitButtonSheet.png" id="3_7mpl4"]
+[ext_resource type="PackedScene" uid="uid://bxcgy2x4svmqn" path="res://Scenes/QuitMenu/QuitMenu.tscn" id="5_nkyp1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdnup"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82vea"]
 texture = ExtResource("2_rscqd")
@@ -16,6 +20,9 @@ region_rect = Rect2(0, 12, 19, 12)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ah7ln"]
 texture = ExtResource("2_rscqd")
 region_rect = Rect2(0, 0, 19, 12)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03jrb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13vh3"]
 texture = ExtResource("3_7mpl4")
@@ -43,6 +50,7 @@ offset_top = 19.0
 offset_right = 55.0
 offset_bottom = 31.0
 focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vdnup")
 theme_override_styles/hover = SubResource("StyleBoxTexture_82vea")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_842tk")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ah7ln")
@@ -53,8 +61,13 @@ offset_top = 19.0
 offset_right = 78.0
 offset_bottom = 31.0
 focus_mode = 0
+theme_override_styles/disabled = SubResource("StyleBoxFlat_03jrb")
 theme_override_styles/hover = SubResource("StyleBoxTexture_13vh3")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_4efhq")
 theme_override_styles/normal = SubResource("StyleBoxTexture_y7xds")
 
+[node name="CanvasLayer" parent="." instance=ExtResource("5_nkyp1")]
+visible = false
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

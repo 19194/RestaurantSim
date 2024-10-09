@@ -6,6 +6,7 @@ extends Node2D
 @onready var button_work = $Button_Work
 @onready var npc_array: Node = $NPC_Array
 @onready var timer: Timer = $Timer
+@onready var quit_menu = $QuitMenu
 
 var npc_scene = preload("res://Scenes/NPC/npc.tscn")
 #var spawn_timer_range = Vector2(5, 60)
@@ -34,7 +35,31 @@ func _process(_delta):
 	else:
 		button_work.process_mode = Node.PROCESS_MODE_INHERIT
 		button_upgrade.process_mode = Node.PROCESS_MODE_INHERIT
-	
+		
+		
+	if Input.is_action_just_pressed("escape"):
+		if quit_menu.visible == false:
+			quit_menu.visible = true
+		elif quit_menu.visible == true:
+			quit_menu.visible = false
+			
+	if quit_menu.visible == true:
+		$HUD.visible = false
+		player.process_mode = Node.PROCESS_MODE_DISABLED
+		button_upgrade.process_mode = Node.PROCESS_MODE_DISABLED
+		button_work.process_mode = Node.PROCESS_MODE_DISABLED
+		for i in range(npc_array.get_child_count()):
+			var child_node = npc_array.get_child(i)
+			child_node.process_mode = Node.PROCESS_MODE_DISABLED
+			
+	elif quit_menu.visible == false:
+		$HUD.visible = true
+		player.process_mode = Node.PROCESS_MODE_INHERIT
+		button_upgrade.process_mode = Node.PROCESS_MODE_INHERIT
+		button_work.process_mode = Node.PROCESS_MODE_INHERIT
+		for i in range(npc_array.get_child_count()):
+			var child_node = npc_array.get_child(i)
+			child_node.process_mode = Node.PROCESS_MODE_INHERIT
 
 func work_button_pressed():
 	button_work.visible = false
