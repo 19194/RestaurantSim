@@ -16,7 +16,7 @@ var move_speed = 350
 var player_in_range = false
 var satisfaction = 0
 var wait_time = 0
-
+var served = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -29,6 +29,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("Space"):
+		served = true
 		stats.holding_food = false
 		player_in_range = false
 		interact_button.visible = false
@@ -81,6 +82,7 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 	$Interact_Button/AnimationPlayer.stop()
 	
 func calc_satisfaction():
+	served = false
 	StatsScript.customers_served += 1
 	var restaurant_effect = 0
 	restaurant_effect += stats.furniture_effect[stats.furniture_state]
@@ -99,6 +101,11 @@ func calc_satisfaction():
 	
 	
 func end_day():
+	timer.stop()
+	if served:
+		calc_satisfaction()
+	else:
+		stats.satisfaction -= int(wait_time)
 	set_physics_process(false)
 	set_process(false)
 	process_mode = Node.PROCESS_MODE_DISABLED

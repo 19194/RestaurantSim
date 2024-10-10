@@ -94,7 +94,6 @@ visible = false
 visible = false
 
 [node name="ScreenFade" parent="." instance=ExtResource("16_alj1u")]
-visible = false
 
 [node name="Timer" type="Timer" parent="."]
 
