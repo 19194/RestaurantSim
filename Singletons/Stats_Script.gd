@@ -1,7 +1,7 @@
 extends Node
 
 # Player Stats
-var money : int = 1000
+var money : int = 0
 var time : int = 0
 var day : int = 0
 var satisfaction : int = 0
