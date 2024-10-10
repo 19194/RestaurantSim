@@ -43,7 +43,7 @@ func _process(_delta):
 		elif quit_menu.visible == true:
 			quit_menu.visible = false
 			
-	if quit_menu.visible == true:
+	if quit_menu.visible == true and Input.is_action_just_pressed("escape"):
 		$HUD.visible = false
 		player.process_mode = Node.PROCESS_MODE_DISABLED
 		button_upgrade.process_mode = Node.PROCESS_MODE_DISABLED
@@ -52,7 +52,7 @@ func _process(_delta):
 			var child_node = npc_array.get_child(i)
 			child_node.process_mode = Node.PROCESS_MODE_DISABLED
 			
-	elif quit_menu.visible == false:
+	elif quit_menu.visible == false and Input.is_action_just_pressed("escape"):
 		$HUD.visible = true
 		player.process_mode = Node.PROCESS_MODE_INHERIT
 		button_upgrade.process_mode = Node.PROCESS_MODE_INHERIT

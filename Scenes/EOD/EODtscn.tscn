@@ -1,0 +1,113 @@
+[gd_scene load_steps=4 format=3 uid="uid://mfnfnyvkdog"]
+
+[ext_resource type="Texture2D" uid="uid://cu502hqg2sphw" path="res://Assets/EOD/EOD.png" id="1_k2yjk"]
+[ext_resource type="FontFile" uid="uid://dmp8m1up2ie2b" path="res://Assets/pixel_font.otf" id="2_g2n47"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gidnl"]
+load_path = "res://.godot/imported/UpgradeMenuPlaque.png-26661c5a536b709ba601bbe91043ac20.ctex"
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Backboard" type="Sprite2D" parent="."]
+scale = Vector2(16.875, 16.875)
+texture = ExtResource("1_k2yjk")
+centered = false
+
+[node name="Day" type="Node2D" parent="."]
+position = Vector2(135, 421.875)
+
+[node name="Plaque" type="Sprite2D" parent="Day"]
+scale = Vector2(16.875, 16.875)
+texture = SubResource("CompressedTexture2D_gidnl")
+centered = false
+
+[node name="Label" type="Label" parent="Day"]
+offset_left = 93.0
+offset_top = 26.125
+offset_right = 452.0
+offset_bottom = 100.125
+theme_override_colors/font_color = Color(0.929412, 0.686275, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(0.505882, 0.337255, 0.105882, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("2_g2n47")
+theme_override_font_sizes/font_size = 64
+text = "Day:"
+
+[node name="Label_Edit" type="Label" parent="Day"]
+offset_left = 1211.0
+offset_top = 26.125
+offset_right = 1570.0
+offset_bottom = 100.125
+theme_override_colors/font_color = Color(0.929412, 0.686275, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(0.505882, 0.337255, 0.105882, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("2_g2n47")
+theme_override_font_sizes/font_size = 64
+text = "000"
+horizontal_alignment = 2
+
+[node name="Money" type="Node2D" parent="."]
+position = Vector2(135, 607.5)
+
+[node name="Plaque" type="Sprite2D" parent="Money"]
+scale = Vector2(16.875, 16.875)
+texture = SubResource("CompressedTexture2D_gidnl")
+centered = false
+
+[node name="Label" type="Label" parent="Money"]
+offset_left = 93.0
+offset_top = 26.125
+offset_right = 452.0
+offset_bottom = 100.125
+theme_override_colors/font_color = Color(0.929412, 0.686275, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(0.505882, 0.337255, 0.105882, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("2_g2n47")
+theme_override_font_sizes/font_size = 64
+text = "Money Earned:"
+
+[node name="Label_Edit" type="Label" parent="Money"]
+offset_left = 1211.0
+offset_top = 26.125
+offset_right = 1570.0
+offset_bottom = 100.125
+theme_override_colors/font_color = Color(0.929412, 0.686275, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(0.505882, 0.337255, 0.105882, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("2_g2n47")
+theme_override_font_sizes/font_size = 64
+text = "000"
+horizontal_alignment = 2
+
+[node name="CustomersServed" type="Node2D" parent="."]
+position = Vector2(135, 793.125)
+
+[node name="Plaque" type="Sprite2D" parent="CustomersServed"]
+scale = Vector2(16.875, 16.875)
+texture = SubResource("CompressedTexture2D_gidnl")
+centered = false
+
+[node name="Label" type="Label" parent="CustomersServed"]
+offset_left = 93.0
+offset_top = 26.125
+offset_right = 452.0
+offset_bottom = 100.125
+theme_override_colors/font_color = Color(0.929412, 0.686275, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(0.505882, 0.337255, 0.105882, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("2_g2n47")
+theme_override_font_sizes/font_size = 64
+text = "Customers Served:"
+
+[node name="Label_Edit" type="Label" parent="CustomersServed"]
+offset_left = 1211.0
+offset_top = 26.125
+offset_right = 1570.0
+offset_bottom = 100.125
+theme_override_colors/font_color = Color(0.929412, 0.686275, 0.239216, 1)
+theme_override_colors/font_outline_color = Color(0.505882, 0.337255, 0.105882, 1)
+theme_override_constants/outline_size = 32
+theme_override_fonts/font = ExtResource("2_g2n47")
+theme_override_font_sizes/font_size = 64
+text = "000"
+horizontal_alignment = 2
