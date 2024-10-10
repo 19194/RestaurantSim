@@ -7,7 +7,7 @@ var move_speed : float = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	SignalScript.pause_time.connect(end_day)
 
 
 func _physics_process(_delta):
@@ -42,3 +42,6 @@ func update_animation_state():
 			state_machine.travel("Walk_Food")
 		elif (velocity == Vector2.ZERO):
 			state_machine.travel("Idle_Food")
+			
+func end_day():
+	process_mode = Node.PROCESS_MODE_DISABLED

@@ -7,6 +7,7 @@ extends Node2D
 @onready var npc_array: Node = $NPC_Array
 @onready var timer: Timer = $Timer
 @onready var quit_menu = $QuitMenu
+@onready var end_of_day: CanvasLayer = $EndOfDay
 
 var npc_scene = preload("res://Scenes/NPC/npc.tscn")
 #var spawn_timer_range = Vector2(5, 60)
@@ -18,7 +19,11 @@ var npc_textures = [load("res://Assets/NPC/Alan NPC.png"), load("res://Assets/NP
 func _ready():
 	SignalScript.work_button.connect(work_button_pressed)
 	SignalScript.upgrade_button.connect(upgrade_button_pressed)
+	SignalScript.end_of_day.connect(open_end_of_day)
 	timer.start(randi_range(spawn_timer_range[0], spawn_timer_range[1]))
+	StatsScript.day += 1
+	StatsScript.holding_food = false
+	StatsScript.locations = [[320.625, 1], [961.875, -1], [1299.375, 1], [1940.625, -1]]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -84,3 +89,10 @@ func spawn_npc():
 
 func _on_timer_timeout() -> void:
 	spawn_npc()
+	
+func open_end_of_day():
+	SignalScript.pause_time.emit()
+	end_of_day.visible = true
+	$HUD.visible = false
+	timer.stop()
+	set_process(false)

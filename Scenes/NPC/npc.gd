@@ -24,6 +24,7 @@ func _ready() -> void:
 	interact_button.visible = false
 	location = stats.locations.pick_random()
 	stats.locations.erase(location)
+	SignalScript.pause_time.connect(end_day)
 	
 
 func _process(_delta: float) -> void:
@@ -80,6 +81,7 @@ func _on_area_2d_area_exited(_area: Area2D) -> void:
 	$Interact_Button/AnimationPlayer.stop()
 	
 func calc_satisfaction():
+	StatsScript.customers_served += 1
 	var restaurant_effect = 0
 	restaurant_effect += stats.furniture_effect[stats.furniture_state]
 	restaurant_effect += stats.wall_effect[stats.wall_state]
@@ -93,7 +95,10 @@ func calc_satisfaction():
 	var money = int(satisfaction * randf_range(0.7, 3))
 	money = clamp(money, 5, 1000)
 	stats.money += money
-	print("money: " + str(money))
-	print("wait time: " + str(wait_time))
-	print("satisfaction: " + str(stats.satisfaction) + ", " + str(satisfaction))
+	stats.money_earned += money
 	
+	
+func end_day():
+	set_physics_process(false)
+	set_process(false)
+	process_mode = Node.PROCESS_MODE_DISABLED

@@ -1,6 +1,6 @@
 extends Node2D
 
-func _process(delta):
+func _process(_delta):
 	if $CanvasLayer.visible:
 		$PlayButton.disabled = true
 		$ExitButton.disabled = true

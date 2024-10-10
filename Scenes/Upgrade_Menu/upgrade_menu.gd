@@ -13,6 +13,7 @@ extends Node2D
 func _ready() -> void:
 	SignalScript.upgrade_button.connect(update_costs)
 	SignalScript.update_prices.connect(update_costs)
+	SignalScript.pause_time.connect(end_day)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -59,3 +60,6 @@ func disable_buttons(state, cost, button):
 			button.disabled = false
 	else:
 		button.disabled = true
+		
+func end_day():
+	process_mode = Node.PROCESS_MODE_DISABLED

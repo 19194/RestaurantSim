@@ -3,8 +3,11 @@ extends Node
 # Player Stats
 var money : int = 1000
 var time : int = 0
-var day : int = 1
+var day : int = 0
 var satisfaction : int = 0
+
+var money_earned : int = 0
+var customers_served : int = 0
 
 var holding_food = false
 var locations = [[320.625, 1], [961.875, -1], [1299.375, 1], [1940.625, -1]]
