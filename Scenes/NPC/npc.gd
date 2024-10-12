@@ -98,6 +98,7 @@ func calc_satisfaction():
 	money = clamp(money, 5, 1000)
 	stats.money += money
 	stats.money_earned += money
+	stats.money = clamp(stats.money, 0, 9999)
 	
 	
 func end_day():
