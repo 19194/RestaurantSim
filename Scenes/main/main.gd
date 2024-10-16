@@ -10,7 +10,7 @@ extends Node2D
 @onready var end_of_day: CanvasLayer = $EndOfDay
 
 var npc_scene = preload("res://Scenes/NPC/npc.tscn")
-var spawn_timer_range = Vector2(5, 60)
+var spawn_timer_range = Vector2(5, 30)
 var npc_textures = [load("res://Assets/NPC/Alan NPC.png"), load("res://Assets/NPC/HawkTuah_NPC.png")]
 
 
