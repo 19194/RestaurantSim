@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 
-var move_speed : float = 500
+const MOVE_SPEED : float = 500
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +14,7 @@ func _physics_process(_delta):
 	# variable that stores direction of player from input
 	var input_direction = Vector2(Input.get_action_strength("right") - Input.get_action_strength("left"), 0)
 	
-	velocity = input_direction * move_speed
+	velocity = input_direction * MOVE_SPEED
 	
 	move_and_slide()
 	update_animation_tree(input_direction)

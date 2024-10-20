@@ -11,7 +11,7 @@ extends Node2D
 
 var npc_scene = preload("res://Scenes/NPC/npc.tscn")
 var spawn_timer_range = Vector2(5, 30)
-var npc_textures = [load("res://Assets/NPC/Alan NPC.png"), load("res://Assets/NPC/HawkTuah_NPC.png")]
+var npc_textures = [load("res://Assets/NPC/Alan NPC.png"), load("res://Assets/NPC/HawkTuah_NPC.png"), load("res://Assets/NPC/DiddyNPC.png")]
 
 
 # Called when the node enters the scene tree for the first time.
